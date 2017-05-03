@@ -1,4 +1,4 @@
-package com.demo.zhaojun.practiceapplication;
+package com.demo.zhaojun.practice;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

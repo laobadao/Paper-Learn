@@ -1,4 +1,4 @@
-package com.demo.zhaojun.practiceapplication;
+package com.demo.zhaojun.practice;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
