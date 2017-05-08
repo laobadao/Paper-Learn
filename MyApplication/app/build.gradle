@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 'android-O'
-    buildToolsVersion '26.0.0-rc1'
+    compileSdkVersion 25
+    buildToolsVersion '25.0.3'
     defaultConfig {
         applicationId "com.demo.zhaojun.practice"
-        minSdkVersion 14
-        targetSdkVersion 'O'
+        minSdkVersion 15
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -27,7 +27,14 @@ android {
             path "CMakeLists.txt"
         }
     }
-
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -40,7 +47,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
+    compile 'com.android.support.constraint:constraint-layout:1.0.1'
     testCompile 'junit:junit:4.12'
     //网络请求
     compile 'com.squareup.retrofit2:retrofit:2.2.0'
@@ -52,24 +59,31 @@ dependencies {
     //Rest
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     //WebService XML解析与封装
-    compile('com.squareup.retrofit2:converter-simplexml:2.1.0', {
-        exclude module: 'stax'
-        exclude module: 'stax-api'
-        exclude module: 'xpp3'
-    })
+    compile('com.squareup.retrofit2:converter-simplexml:2.1.0')
+            {
+                exclude module: 'stax'
+                exclude module: 'stax-api'
+                exclude module: 'xpp3'
+            }
     //support
     compile 'com.android.support:support-annotations:26.0.0-alpha1'
-    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
-    compile 'com.android.support:design:26.0.0-alpha1'
-    compile 'com.android.support:cardview-v7:26.0.0-alpha1'
-    compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:cardview-v7:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
     //统计
     compile 'com.umeng.analytics:umeng-analytics:5.4.1'
     //文件选择器
     compile 'com.droidninja:filepicker:2.0.3'
-    //recyclerview
+    //RecyclerView
     compile 'jp.wasabeef:recyclerview-animators:2.2.6'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.15'
     compile 'com.marshalchen.ultimaterecyclerview:library:0.7.2'
-    
+    //图片加载
+    compile 'com.github.bumptech.glide:glide:3.8.0'
+    //zooming Android ImageView.
+    compile 'com.github.chrisbanes:PhotoView:2.0.0'
+    //pdf
+    compile 'com.joanzapata.pdfview:android-pdfview:1.0.4@aar'
+    //
 }
