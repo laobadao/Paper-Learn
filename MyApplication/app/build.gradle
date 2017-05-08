@@ -108,13 +108,17 @@ dependencies {
     compile 'me.leolin:ShortcutBadger:1.1.16@aar'
     //消息推送
     compile 'com.getui:sdk:2.10.2.0'
-    //
+    //retrolambda
     retrolambdaConfig 'net.orfjackal.retrolambda:retrolambda:+'
     //lifecycle
     compile 'com.trello.rxlifecycle2:rxlifecycle:2.0.1'
-    // If you want to bind to Android-specific lifeCycles
+    //  bind to Android-specific lifeCycles
     compile 'com.trello.rxlifecycle2:rxlifecycle-android:2.0.1'
-    // If you want pre-written Activities and Fragments you can subclass as providers
+    //  pre-written Activities and Fragments you can subclass as providers
     compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.0.1'
-    
+    //fragmentation
+    compile 'me.yokeyword:fragmentation:0.10.4'
+    //FileDownloader
+    compile 'com.liulishuo.filedownloader:library:1.4.3'
+
 }
