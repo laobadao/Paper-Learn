@@ -1,8 +1,10 @@
 apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion 25
     buildToolsVersion '25.0.3'
+
     defaultConfig {
         applicationId "com.demo.zhaojun.practice"
         minSdkVersion 15
@@ -35,11 +37,21 @@ android {
         exclude 'META-INF/LICENSE.txt'
         exclude 'META-INF/NOTICE.txt'
     }
+
+    retrolambda {
+        javaVersion JavaVersion.VERSION_1_7
+        jvmArgs '-arg1', '-arg2'
+        defaultMethods false
+        incremental true
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
 }
+
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -94,7 +106,15 @@ dependencies {
     compile 'com.github.sundeepk:compact-calendar-view:2.0.1'
     //应用图标未读消息显示
     compile 'me.leolin:ShortcutBadger:1.1.16@aar'
-    //
+    //消息推送
     compile 'com.getui:sdk:2.10.2.0'
-
+    //
+    retrolambdaConfig 'net.orfjackal.retrolambda:retrolambda:+'
+    //lifecycle
+    compile 'com.trello.rxlifecycle2:rxlifecycle:2.0.1'
+    // If you want to bind to Android-specific lifeCycles
+    compile 'com.trello.rxlifecycle2:rxlifecycle-android:2.0.1'
+    // If you want pre-written Activities and Fragments you can subclass as providers
+    compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.0.1'
+    
 }
