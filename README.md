@@ -19,3 +19,5 @@ come with me! practice
 > 7.idea 
 
 > 8.persist
+
+## How
